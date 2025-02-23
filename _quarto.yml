@@ -1,6 +1,8 @@
 project:
   type: book
-
+  resources: 
+    - staticwebapp.config.json
+  
 book:
   title: "3mw_azure"
   author: "Norah Jones"
