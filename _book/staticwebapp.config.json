@@ -1,10 +1,6 @@
 {
   "routes": [
     {
-      "route": "/index.html",
-      "allowedRoles": []
-    },
-    {
       "route": "/*",
       "allowedRoles": ["authenticated"]
     }
