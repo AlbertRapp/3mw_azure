@@ -13,11 +13,22 @@
   },
   "auth": {
     "identityProviders": {
-      "aadb2c": {
-        "registration": {
-          "openIdIssuer": "https://login.microsoftonline.com/86d2b60e-0a55-4cd4-b7dc-8961288e385e/v2.0",
-          "clientIdSettingName": "AZURE_CLIENT_ID",
-          "clientSecretSettingName": "AZURE_CLIENT_SECRET_APP_SETTING_NAME"
+      "customOpenIdConnectProviders": {
+        "aadb2c": {
+          "registration": {
+            "clientIdSettingName": "AADB2C_PROVIDER_CLIENT_ID",
+            "clientCredential": {
+              "clientSecretSettingName": "AADB2C_PROVIDER_CLIENT_SECRET"
+            },
+            "openIdConnectConfiguration": {
+              "wellKnownOpenIdConfiguration": "https://3mw-quarto-auth-demo.b2clogin.com/3mw-quarto-auth-demo.onmicrosoft.com/B2C_1_signin/v2.0/.well-known/openid-configuration"
+            }
+          },
+          "login": {
+            "nameClaimType": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier",
+            "scopes": ["openid", "offline_access", "profile"],
+            "loginParameterNames": []
+          }
         }
       }
     }
